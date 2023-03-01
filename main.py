@@ -8,9 +8,9 @@ options = ["pedra", "papel", "tesoura"]
 print('============= PEDRA -- PAPEL -- TESOURA =============')
 
 while True:
-    choice = input("Escolha Pedra, Papel, Tesoura, ou aperte r para sair: ")
-    choice.lower()
-    if choice == "r":
+    choice = input("Escolha: Pedra, Papel, Tesoura! Ou aperte s para Sair: ")
+    choice = choice.lower()
+    if choice == "s":
         break
 
     if choice not in options:
@@ -24,16 +24,17 @@ while True:
     if choice == computerChoice:
         print("É um empate!")
     elif choice == 'pedra' and computerChoice == 'tesoura':
-        print('Voce Ganhou!')
+        print('Voce Ganhou! Pedra ganha da Tesoura.')
         numWins += 1
     elif choice == 'papel' and computerChoice == 'pedra':
-        print('Voce Ganhou!')
+        print('Voce Ganhou! Papel ganha da Pedra.')
         numWins += 1
     elif choice == 'tesoura' and computerChoice == 'papel':
-        print('Voce Ganhou!')
-        numWinsComputer += 1
+        print('Voce Ganhou! Tesoura Ganha do Papel. ')
+        numWins += 1
     else:
-        print('Voce Perdeu!')
+        print('Voce Perdeu! {} ganha de {}'.format(computerChoice, choice))
+        numWinsComputer += 1
 
 print('Suas vitorias: {}'.format(numWins))
 print('Vitorias do Computador: {}'.format(numWinsComputer))
